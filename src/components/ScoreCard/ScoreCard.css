@@ -1,0 +1,18 @@
+/* For Chrome, Edge, and Safari */
+.no-scrollbar::-webkit-scrollbar-button {
+  display: none; /* Hide the scrollbar arrows */
+}
+
+/* Customize the scrollbar if needed */
+.no-scrollbar::-webkit-scrollbar {
+  height: 8px; /* Adjust height for horizontal scrollbar */
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6b7280; /* Grey color for the thumb */
+  border-radius: 4px; /* Rounded edges */
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+  background-color: #000000; /* Black background */
+}
