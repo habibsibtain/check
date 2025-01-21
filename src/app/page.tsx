@@ -6,8 +6,8 @@ import Gallery from "@/components/Gallery/Gallery";
 import Teams from "@/components/Teams/Teams";
 import Hero from "@/components/HeroSection/Hero";
 import AboutUs from "@/components/aboutus/page";
-import ScoreCard from "@/components/ScoreCard/ScoreCard";
 import MedalTable from "@/components/MedalTable/MedalTable";
+import ScoreCard from "@/components/ScoreCard/ScoreCard";
 export default function Home() {
   return (
     <>

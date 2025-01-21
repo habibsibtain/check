@@ -33,44 +33,38 @@ const ScoreCard = () => {
   ];
 
   // Hum ek  parent div mai two card fetch kar rhe hai uske liye hai
-  const chunkedCards = [];
-  for (let i = 0; i < cards.length; i += 2) {
-    chunkedCards.push(cards.slice(i, i + 2));
-  }
+  const chunkedCards = React.useMemo(() => {
+    const chunks = [];
+    for (let i = 0; i < cards.length; i += 2) {
+      chunks.push(cards.slice(i, i + 2));
+    }
+    return chunks;
+  }, [cards]);
 
-   const scrollRef1 = useRef(null);
-   const scrollRef2 = useRef(null);
- 
-   useEffect(() => {
-     // Function to handle scrolling for a specific carousel
-     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-     const handleScroll = (scrollRef:any) => {
-       if (scrollRef.current) {
-         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-         const nextScroll = scrollLeft + clientWidth;
- 
-         scrollRef.current.scrollTo({
-           left: nextScroll >= scrollWidth ? 0 : nextScroll,
-           behavior: "smooth",
-         });
-       }
-     };
- 
-     const interval1 = setInterval(() => handleScroll(scrollRef1), 5000);
-     const interval2 = setInterval(() => handleScroll(scrollRef2), 5000);
- 
-     return () => {
-       clearInterval(interval1);
-       clearInterval(interval2);
-     }; 
-   }, []);
- 
-   useEffect(() => {
-     const interval = setInterval(() => {
-       setActiveIndex((prevIndex) => (prevIndex + 1) % cards.length);
-     }, 5000);
-     return () => clearInterval(interval);
-   }, [cards.length]);
+  const scrollRef1 = useRef(null);
+  const scrollRef2 = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = (scrollRef) => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        const nextScroll = scrollLeft + clientWidth;
+
+        scrollRef.current.scrollTo({
+          left: nextScroll >= scrollWidth ? 0 : nextScroll,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    const interval1 = setInterval(() => handleScroll(scrollRef1), 5000);
+    const interval2 = setInterval(() => handleScroll(scrollRef2), 5000);
+
+    return () => {
+      clearInterval(interval1);
+      clearInterval(interval2);
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -78,7 +72,6 @@ const ScoreCard = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, [cards.length]);
-
   return (
     <div className="w-full bg-[#0B0A09] flex flex-col items-center px-6 md:px-16 mb-6 relative md:pt-14 font-bunken">
       {/* Sports Categories */}
