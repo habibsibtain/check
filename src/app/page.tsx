@@ -7,6 +7,7 @@ import Teams from "@/components/Teams/Teams";
 import Hero from "@/components/HeroSection/Hero";
 import AboutUs from "@/components/aboutus/page";
 import ScoreCard from "@/components/ScoreCard/ScoreCard";
+import MedalTable from "@/components/MedalTable/MedalTable";
 export default function Home() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="flex bg-[#0B0A09] flex-col items-center justify-center">
         <AboutUs />
         <Tournament />
+        <MedalTable/>
         <ScoreCard/>
         <Faq></Faq>
         <Gallery />
