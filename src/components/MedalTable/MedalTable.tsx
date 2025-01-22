@@ -7,44 +7,48 @@ interface Team {
   name: string;
   gold: number;
   silver: number;
+  bronze: number;
 }
 
 const MedalTable: React.FC = () => {
   const teams: Team[] = [
-    { rank: 1, name: "NIT RKL", gold: 12, silver: 3 },
-    { rank: 2, name: "NIT SURATKAL", gold: 10, silver: 2 },
-    { rank: 3, name: "NIT TRICHY", gold: 7, silver: 4 },
-    { rank: 4, name: "BIT", gold: 4, silver: 0 },
-    { rank: 5, name: "IIT BOMBAY", gold: 3, silver: 0 },
-    { rank: 6, name: "IIT DELHI", gold: 1, silver: 1 },
-    { rank: 7, name: "OUTR", gold: 0, silver: 1 },
-    { rank: 9, name: "IIIT", gold: 0, silver: 0 },
-    { rank: 10, name: "IIIT", gold: 0, silver: 0 },
-    { rank: 11, name: "IIIT", gold: 0, silver: 0 },
-    { rank: 12, name: "IIIT", gold: 0, silver: 0 },
-    { rank: 13, name: "IIIT", gold: 0, silver: 0 },
-    { rank: 14, name: "IIIT", gold: 0, silver: 0 },
-    { rank: 15, name: "IIIT", gold: 0, silver: 0 },
-    { rank: 16, name: "IIIT", gold: 0, silver: 0 },
-    { rank: 17, name: "IIIT", gold: 0, silver: 0 },
-    { rank: 18, name: "IIIT", gold: 0, silver: 0 },
+    { rank: 1, name: "NIT RKL", gold: 12, silver: 3, bronze: 1 },
+    { rank: 2, name: "NIT SURATKAL", gold: 10, silver: 2, bronze: 1 },
+    { rank: 3, name: "NIT TRICHY", gold: 7, silver: 4, bronze: 1 },
+    { rank: 4, name: "BIT", gold: 4, silver: 0, bronze: 1 },
+    { rank: 5, name: "IIT BOMBAY", gold: 3, silver: 0, bronze: 1 },
+    { rank: 6, name: "IIT DELHI", gold: 1, silver: 1, bronze: 1 },
+    { rank: 7, name: "OUTR", gold: 0, silver: 1, bronze: 1 },
+    { rank: 9, name: "IIIT", gold: 0, silver: 0, bronze: 1 },
+    { rank: 10, name: "IIIT", gold: 0, silver: 0, bronze: 1 },
+    { rank: 11, name: "IIIT", gold: 0, silver: 0, bronze: 1 },
+    { rank: 12, name: "IIIT", gold: 0, silver: 0, bronze: 1 },
+    { rank: 13, name: "IIIT", gold: 0, silver: 0, bronze: 1 },
+    { rank: 14, name: "IIIT", gold: 0, silver: 0, bronze: 1 },
+    { rank: 15, name: "IIIT", gold: 0, silver: 0, bronze: 1 },
+    { rank: 16, name: "IIIT", gold: 0, silver: 0, bronze: 1 },
+    { rank: 17, name: "IIIT", gold: 0, silver: 0, bronze: 1 },
+    { rank: 18, name: "IIIT", gold: 0, silver: 0, bronze: 1 },
   ];
 
   return (
-    <div className="bg-[#0B0A09] text-white font-bunken w-full mt-8 flex flex-col items-center justify-center p-4">
+    <div className="bg-[#0B0A09] text-white font-bunken w-full mt-8 flex flex-col items-center justify-center p-4 pb-20">
       <h1 className="text-4xl font-bold text-center mb-6">
         MEDAL <span className="text-[#FF0000]"> TABLE </span>
       </h1>
-      <div className="w-[75%] py-2 bg-[#0B0A09] rounded-lg shadow-lg shadow-[#FF0000] font-Urbanist border border-white h-[500px] overflow-y-auto no-scrollbar">
+      <div className="w-[75%] py-2 bg-[#0B0A09] rounded-lg box font-Urbanist border border-white h-[500px] overflow-y-auto no-scrollbar">
         {/* Header */}
         <div className="flex justify-between items-center border-b border-gray-700 py-3 px-4 text-lg font-bold">
           <span className="w-1/12 mr-8 md:mr-0 text-center">RANK</span>
           <span className="w-6/12 text-start">NAME</span>
           <span className="w-1/12 flex justify-center">
-            <Image src="/images/medal.png" alt="gold" width={35} height={35} />
+            <Image src="/images/gold-medal.png" alt="gold" width={35} height={35} />
           </span>
           <span className="w-1/12 flex justify-center">
-            <Image src="/images/silver.png" alt="silver" width={35} height={35} />
+            <Image src="/images/silver-medal.png" alt="silver" width={35} height={35} />
+          </span>
+          <span className="w-1/12 flex justify-center">
+            <Image src="/images/bronze-medal.png" alt="silver" width={35} height={35} />
           </span>
         </div>
         {/* Body */}
@@ -58,6 +62,7 @@ const MedalTable: React.FC = () => {
               <span className="w-6/12 text-start">{team.name}</span>
               <span className="w-1/12 text-yellow-400 text-center">{team.gold}</span>
               <span className="w-1/12 text-gray-300 text-center">{team.silver}</span>
+              <span className="w-1/12 text-[#CD7F32] text-center">{team.bronze}</span>
             </li>
           ))}
         </ol>

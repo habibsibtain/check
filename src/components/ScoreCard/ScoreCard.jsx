@@ -90,24 +90,24 @@ const ScoreCard = () => {
         ))}
       </div>
 
-      <h1 className="text-4xl">Upcoming Events</h1>
+      <h1 className="text-4xl text-center mb-4 ">Upcoming Events</h1>
 
       {/* Cards Section  */}
       <div className="w-full bg-[#0B0A09] flex flex-col items-center px-6 md:px-16 mb-6 relative md:pt-14 font-bunken">
         {/* Grouped cards */}
         <div
-          className="flex gap-6 overflow-x-auto p-4 w-[80%] no-scrollbar rounded-3xl bg-gradient-to-r from-[#FF0000] to-[#000000]"
+          className="flex gap-6 overflow-x-auto p-4 w-[80%] no-scrollbar rounded-3xl border-[#FF0000] border-2 "
           ref={scrollRef1}
         >
           {chunkedCards.map((group, groupIndex) => (
             <div
               key={groupIndex}
-              className="flex gap-4 min-w-full justify-around items-center"
+              className="flex gap-4  min-w-full justify-around items-center"
             >
               {group.map((card, cardIndex) => (
                 <div
                   key={cardIndex}
-                  className="min-w-[300px] text-nowrap text-white py-4 px-8 rounded-lg shadow-lg flex flex-col items-center bg-gradient-to-br from-[#000000] to-[#D9D9D933]"
+                  className="min-w-[300px] text-nowrap text-white py-4 px-8 rounded-lg shadow-lg flex flex-col items-center bg-gradient-to-br from-[#000000] to-[#D9D9D933] border-[0.8px] border-[#D9D9D9]"
                 >
                   <h3 className="text-2xl text-[#FF0000] font-extrabold">
                     {card.title}
@@ -146,13 +146,13 @@ const ScoreCard = () => {
         </div>
       </div>
 
-        <h1 className="text-4xl mt-4 ">Previous Events</h1>
+        <h1 className="text-4xl mt-4 text-center mb-4 ">Previous Events</h1>
 
       {/* Score Card Section */}
       <div className="w-full bg-[#0B0A09] flex flex-col items-center px-6 md:px-16 mb-6 relative md:pt-14 font-bunken">
         {/* Grouped cards */}
         <div
-          className="flex gap-6 overflow-x-auto p-4 w-[80%] no-scrollbar rounded-3xl bg-gradient-to-r from-[#FF0000] to-[#000000]"
+          className="flex gap-6 overflow-x-auto p-4 w-[80%] no-scrollbar rounded-3xl border-[#FF0000] border-2 "
           ref={scrollRef2}
         >
           {chunkedCards.map((group, groupIndex) => (
@@ -163,7 +163,7 @@ const ScoreCard = () => {
               {group.map((card, cardIndex) => (
                 <div
                   key={cardIndex}
-                  className="min-w-[300px] text-nowrap text-white/40 py-4 px-8 rounded-lg shadow-lg flex flex-col items-center bg-gradient-to-br from-[#000000] to-[#D9D9D933]"
+                  className="min-w-[300px] text-nowrap text-white/40 py-4 px-8 rounded-lg shadow-lg flex flex-col items-center bg-gradient-to-br from-[#000000] to-[#D9D9D933] border-[0.8px] border-[#D9D9D9]"
                 >
                   <h3 className="text-2xl font-extrabold">{card.title}</h3>
                   <div className="mt-4 flex w-full justify-around font-Urbanist items-center">
